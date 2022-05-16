@@ -175,6 +175,9 @@ def df_creater(productid_input):
                  df_review_ALL_original[['ProductID', 'Username', 'Rating']],
                  on='ProductID', 
                  how='left')
+    #change the "Rating" to 1s 
+    # in the matrix, if the user has brought this item, the "rating" value will be "1"; else the "rating" will be "NaN"
+    temp_df_user['Rating'] = temp_df_user['Rating'].apply(lambda x: 1)
     #create pivot tables for finding the nearest neighbours
     temp_user_item_matrix=pd.pivot_table(temp_df_user, values='Rating',
                                     index=['ProductID'], columns=['Username'])
