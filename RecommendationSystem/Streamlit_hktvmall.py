@@ -232,7 +232,7 @@ def create_paginator(def_tab):
 #sidebar
 
 
-st.sidebar.image('hktvmall logo.png')
+st.sidebar.image('RecommendationSystem/hktvmall logo.png')
 st.sidebar.title("商品推薦系統")
 st.sidebar.write('請輸入商品編號，系統會找出相似商品')
 productid_input=st.sidebar.text_input('', key = 'product_id_text', placeholder='在此輸入商品編號').upper()
@@ -300,7 +300,7 @@ if productid_input:
             
             #button that brings you to the HKTVMall product page
             url = list(df_item_ALL[df_item_ALL['ProductID']==productid_input]['url'])[0]
-            gif_html = get_img_with_href('buy.png', url)
+            gif_html = get_img_with_href('RecommendationSystem/buy.png', url)
             st.markdown(gif_html, unsafe_allow_html=True)
 
             st.subheader('客戶評論 ({})  客戶評分 {} / 5 '.format(int(list(df_item_ALL[df_item_ALL['ProductID']==productid_input]['Review_total'])[0]),list(df_item_ALL[df_item_ALL['ProductID']==productid_input]['Review_avg'])[0]))  
