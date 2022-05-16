@@ -138,7 +138,7 @@ def get_img_with_href(local_img_path, target_url):
 @st.cache
 def get_data():
     #import data
-    df_item_ALL = pd.read_csv('/RecommendationSystem/df_item_ALL.csv')
+    df_item_ALL = pd.read_csv('RecommendationSystem/df_item_ALL.csv')
 
     # after trying to solve the 1d vector problem using the for loop,
     # it is found that there are duplicated product ID
@@ -146,7 +146,7 @@ def get_data():
     # solution? drop the duplicated rows
     df_item_ALL.drop_duplicates(subset=['ProductID'],inplace=True)
 
-    df_review_ALL_original = pd.read_csv('NEW_df_review_ALL_original.csv')
+    df_review_ALL_original = pd.read_csv('RecommendationSystem/NEW_df_review_ALL_original.csv')
     # clean the user name
     # commented, because that was done in the notebook
     # df_review_ALL_original['Username']= df_review_ALL_original['Username'].apply(lambda x:str(x).split('>')[-1])
