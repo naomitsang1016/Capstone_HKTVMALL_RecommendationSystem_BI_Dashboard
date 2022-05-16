@@ -1,6 +1,5 @@
-# Capstone_HKTVMALL_RecommendationSystem_BI_Dashboard
 
-# Capstone Project - Topic:HKTVMall with Serena Chan and Thomas Wong from 19th April 2022 to 18th May 2022. 
+## Capstone Project - Topic:HKTVMall with Serena Chan and Thomas Wong from 19th April 2022 to 18th May 2022. 
 
 The project was divided into three parts: Web Scraping, Recommendation Systems and PowerBi Dashboard. 
 
