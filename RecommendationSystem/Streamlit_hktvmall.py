@@ -138,7 +138,7 @@ def get_img_with_href(local_img_path, target_url):
 @st.cache
 def get_data():
     #import data
-    df_item_ALL = pd.read_csv('df_item_ALL.csv')
+    df_item_ALL = pd.read_csv('/RecommendationSystem/df_item_ALL.csv')
 
     # after trying to solve the 1d vector problem using the for loop,
     # it is found that there are duplicated product ID
