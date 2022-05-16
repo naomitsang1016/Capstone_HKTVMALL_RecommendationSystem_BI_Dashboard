@@ -138,7 +138,7 @@ def get_img_with_href(local_img_path, target_url):
 @st.cache
 def get_data():
     #import data
-    df_item_ALL = pd.read_csv('df_item_ALL.csv')
+    df_item_ALL = pd.read_csv('RecommendationSystem/df_item_ALL.csv')
 
     # after trying to solve the 1d vector problem using the for loop,
     # it is found that there are duplicated product ID
@@ -146,7 +146,7 @@ def get_data():
     # solution? drop the duplicated rows
     df_item_ALL.drop_duplicates(subset=['ProductID'],inplace=True)
 
-    df_review_ALL_original = pd.read_csv('NEW_df_review_ALL_original.csv')
+    df_review_ALL_original = pd.read_csv('RecommendationSystem/df_review_ALL.csv')
     # clean the user name
     # commented, because that was done in the notebook
     # df_review_ALL_original['Username']= df_review_ALL_original['Username'].apply(lambda x:str(x).split('>')[-1])
@@ -175,6 +175,9 @@ def df_creater(productid_input):
                  df_review_ALL_original[['ProductID', 'Username', 'Rating']],
                  on='ProductID', 
                  how='left')
+    #change the "Rating" to 1s 
+    # in the matrix, if the user has brought this item, the "rating" value will be "1"; else the "rating" will be "NaN"
+    temp_df_user['Rating'] = temp_df_user['Rating'].apply(lambda x: 1)
     #create pivot tables for finding the nearest neighbours
     temp_user_item_matrix=pd.pivot_table(temp_df_user, values='Rating',
                                     index=['ProductID'], columns=['Username'])
@@ -232,7 +235,7 @@ def create_paginator(def_tab):
 #sidebar
 
 
-st.sidebar.image('hktvmall logo.png')
+st.sidebar.image('RecommendationSystem/hktvmall logo.png')
 st.sidebar.title("商品推薦系統")
 st.sidebar.write('請輸入商品編號，系統會找出相似商品')
 productid_input=st.sidebar.text_input('', key = 'product_id_text', placeholder='在此輸入商品編號').upper()
@@ -300,7 +303,7 @@ if productid_input:
             
             #button that brings you to the HKTVMall product page
             url = list(df_item_ALL[df_item_ALL['ProductID']==productid_input]['url'])[0]
-            gif_html = get_img_with_href('buy.png', url)
+            gif_html = get_img_with_href('RecommendationSystem/buy.png', url)
             st.markdown(gif_html, unsafe_allow_html=True)
 
             st.subheader('客戶評論 ({})  客戶評分 {} / 5 '.format(int(list(df_item_ALL[df_item_ALL['ProductID']==productid_input]['Review_total'])[0]),list(df_item_ALL[df_item_ALL['ProductID']==productid_input]['Review_avg'])[0]))  
