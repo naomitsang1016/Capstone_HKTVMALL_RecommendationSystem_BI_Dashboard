@@ -146,7 +146,7 @@ def get_data():
     # solution? drop the duplicated rows
     df_item_ALL.drop_duplicates(subset=['ProductID'],inplace=True)
 
-    df_review_ALL_original = pd.read_csv('RecommendationSystem/NEW_df_review_ALL_original.csv')
+    df_review_ALL_original = pd.read_csv('RecommendationSystem/df_review_ALL.csv')
     # clean the user name
     # commented, because that was done in the notebook
     # df_review_ALL_original['Username']= df_review_ALL_original['Username'].apply(lambda x:str(x).split('>')[-1])
