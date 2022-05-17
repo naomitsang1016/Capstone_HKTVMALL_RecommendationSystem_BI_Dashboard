@@ -20,4 +20,8 @@ Search Page with recommendation - Random:
 PowerBI Dashboard Video Demonstration:
 https://www.youtube.com/watch?v=JobPgGj5-mc
 ![image](https://user-images.githubusercontent.com/97008731/168754572-d9949853-6ec6-4bc9-bcfa-c91f82920ebf.png)
+![image](https://user-images.githubusercontent.com/97008731/168755587-a2262eef-535c-406b-8c33-d20f13661b41.png)
+![image](https://user-images.githubusercontent.com/97008731/168755635-2bc08aea-eddc-4b24-abfa-acfecfb3c203.png)
+![image](https://user-images.githubusercontent.com/97008731/168755707-09214408-5de4-4a23-a685-6dbeeaf75c3f.png)
+![image](https://user-images.githubusercontent.com/97008731/168755773-76ccee71-9afe-4e1d-a889-56f7f0e33695.png)
 
